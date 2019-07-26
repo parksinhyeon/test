@@ -8,10 +8,6 @@ public class TestVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TestVO(String name) {
-		super();
-		this.name = name;
-	}
 
 	public String getName() {
 		return name;
@@ -21,10 +17,7 @@ public class TestVO {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "TestVO [name=" + name + "]";
-	}
+	
 	
 	
 }
