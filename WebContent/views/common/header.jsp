@@ -10,7 +10,7 @@
         	
             body{
                 width: 1280px;
-                height:1440px;
+                height:800px;
                 font-family: 'Noto Sans KR', sans-serif;
                 margin: auto;
             }
@@ -131,11 +131,11 @@
 
 	  <header>
         <article>
-            <div id="articleSec"><img src="images/local.png" width="50%" height="80%"></img></div>
+            <div id="articleSec"><img src="<%=request.getContextPath()%>/images/local.png" width="50%" height="80%"></img></div>
             <p id="articleP">어디에요</p>
         </article>
         <section id = headerSec1>
-            <img src="images/logo.png" id= "mainlogo">
+            <img src="<%=request.getContextPath()%>/images/logo.png" id= "mainlogo">
             <form id="searchFrm" name="searchFrm" method="GET" action="#">
                 <input type="text" id = "searchBox">
                 <input type="submit" id="searchBtn" value="검색"></input>
