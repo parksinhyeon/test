@@ -23,7 +23,7 @@
             header{
             	
                 width: 100%;
-                height: 10%;
+                height: 15%;
                 text-align: center;
             }
             header article{
