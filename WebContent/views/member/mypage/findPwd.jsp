@@ -13,7 +13,9 @@
 </style>
 </head>
 <body>
-	
+	<%@ include file="../../common/header.jsp"%>
+
+
 	<div id="wrapper" >
 			<form class="join-form" action="#" method="POST">
 				<div class="form-header">
@@ -50,7 +52,7 @@
 
 		</div>
 	
-	
+		<%@ include file="../../common/footer.jsp"%>
 	
 </body>
 </html>

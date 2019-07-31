@@ -1,12 +1,19 @@
 @charset "UTF-8";
 
+
+body{
+	width:1280px;
+	
+	margin:0 auto;
+	height: 800px;
+}
 *{
 	box-sizing: border-box;
 }
 
 #wrapper{
 	width:300px;
-	margin:50px auto;
+	margin:auto;
 	box-sizing: border-box;
 }
 
@@ -36,7 +43,7 @@
 }
 
 .form-header {
-	text-align: center;
+	text-align: left;
 	margin-bottom: 2rem;
 }
 

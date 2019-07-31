@@ -29,11 +29,11 @@
 #wrapper {
 	/* 		border:none; */
 	width: 1280px;
-	height: 700px;
+	height: 600px;
 	align-content: center;
 	clear: both;
 	background: lightgrey;
-	margin-top:20px;
+	margin:0;
 }
 
 #listFrame {
@@ -42,76 +42,113 @@
 	height: 100%;
 	width: 1002px;
 }
-
+.imgFrame{
+	width:250px;
+	height:230px;
+	margin:0;
+	padding:0;
+}
 .salImg {
-	width: 250px;
-	height: 230px;
+	width: 100%;
+	height:100%;
 	border: 1px solid black;
+	
 }
 
 ul {
 	list-style: none;
 	margin:0 ;
-	margin-top:20px;
+	
 	padding: 0;
 }
-
+#list1,#list2{
+	margin:0;
+}
 #list1 li, #list2 li {
 	float: left;
 	margin: 0;
+	padding: 0;
 	padding: 0;
 }
 
 ul>li>div {
 	width: 250px;
 	height: 70px;
-	border: 1px solid black;
+
+	top:0;
 	margin: 0;
+	
+}
+.localSel{
+	cursor:pointer;
 }
 </style>
 </head>
 <body>
 	<div>
-		<div class="localSel local">지역</div>
-		<div class="localSel public">전국</div>
+		<div class="localSel local" id="local">지역</div>
+		<div class="localSel public" id="public">전국</div>
 	</div>
 	<section id="wrapper">
 
 
 		<div id="listFrame">
 			<ul id="list1">
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
 
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
 
 			</ul>
 			<ul id="list2">
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+			
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
-				<li><img src="images/river1.png" class="salImg">
-					<div></div>
+				<li>
+				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+					<div class="listFooter"></div>
 				</li>
 			</ul>
+			
 		</div>
 
 
 	</section>
+	
+	<script>
+		$("#public").click(function(){
+			$(this).css({"border":"1px solid black"});
+			$("#local").css({"border":"0"});
+		});
+		
+			$("#local").click(function(){
+				$(this).css({"border":"1px solid black"});
+				$("#public").css({"border":"0"});
+			});
+	
+	</script>
 </body>
 </html>
