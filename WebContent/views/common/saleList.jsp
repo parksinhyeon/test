@@ -27,18 +27,18 @@
 }
 
 #wrapper {
-	
+	/* 		border:none; */
 	width: 1280px;
-	height: 1280px;
+	height: 600px;
 	align-content: center;
 	clear: both;
-	
+	background: lightgrey;
 	margin:0;
 }
 
 #listFrame {
-
-	margin:20px auto;
+	border: 1px solid black;
+	margin-left: 140px;
 	height: 100%;
 	width: 1002px;
 }
@@ -51,7 +51,7 @@
 .salImg {
 	width: 100%;
 	height:100%;
-
+	border: 1px solid black;
 	
 }
 
@@ -61,17 +61,17 @@ ul {
 	
 	padding: 0;
 }
-listSale{
+#list1,#list2{
 	margin:0;
 }
-.listSale li {
+#list1 li, #list2 li {
 	float: left;
 	margin: 0;
 	padding: 0;
 	padding: 0;
 }
 
-.listFooter {
+ul>li>div {
 	width: 250px;
 	height: 70px;
 
@@ -93,7 +93,7 @@ listSale{
 
 
 		<div id="listFrame">
-			<ul class="listSale" id="list1">
+			<ul id="list1">
 				<li>
 				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
 					<div class="listFooter"></div>
@@ -113,7 +113,7 @@ listSale{
 				</li>
 
 			</ul>
-			<ul  class="listSale" id="list2">
+			<ul id="list2">
 			
 				<li>
 				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
@@ -132,44 +132,7 @@ listSale{
 					<div class="listFooter"></div>
 				</li>
 			</ul>
-			<ul  class="listSale" id="list3">
 			
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-			</ul>
-			<ul class="listSale" id="list4">
-			
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-			</ul>
 		</div>
 
 
