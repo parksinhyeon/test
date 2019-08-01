@@ -10,7 +10,7 @@
         	
             body{
                 width: 1280px;
-                height:800px;
+             
                 font-family: 'Noto Sans KR', sans-serif;
                 margin: auto;
             }
@@ -20,10 +20,13 @@
                 display: block;
    /*               border: 1px solid black;  */
             }
+            section{
+            	height:300px
+            }
             header{
             	
                 width: 100%;
-                height: 15%;
+                height:200px;
                 text-align: center;
             }
             header article{
@@ -103,6 +106,7 @@
                 width: 100%;
                 height: 10%;
                 clear: both;
+                margin:0;
                 position: relative;
             }
             nav>ul>li{
@@ -128,7 +132,7 @@
 
 </head>
 <body>
-
+	<section>
 	  <header>
         <article>
             <div id="articleSec"><img src="<%=request.getContextPath()%>/images/local.png" width="50%" height="80%"></img></div>
@@ -157,7 +161,7 @@
             <li><a href="#">고객센터</a></li>
         </ul>
     </nav>
-   
+   </section>
 	
 </body>
 </html>
