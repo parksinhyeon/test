@@ -8,15 +8,27 @@
 <link rel="stylesheet" href="../../../style/member/form.css"
 	type="text/css">
 <style>
+	body{
+	width:1280px;
+	
+	margin:0 auto;
+
+}
 	#form-wrapper{
 		margin:auto;
-		width:400px;	
+		width:400px;
+		height: 1280px;	
+	}
+	h1{
+		width:800px;
+		
 	}
 </style>
 </head>
 <body>
 	<%@ include file="../../common/header.jsp"%>
-
+	<%@ include file="../../common/myPageSide.jsp"%>
+	<h1>정보 수정</h1>
 
 	<div id="form-wrapper">
 		<form>
