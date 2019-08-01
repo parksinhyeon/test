@@ -11,7 +11,7 @@ body{
 	z-index: 30;
 	position: fixed;
 	left: 0;
-	display:block;
+	display:none;
 	float: left;
 }
 

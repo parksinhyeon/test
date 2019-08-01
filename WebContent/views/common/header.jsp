@@ -7,18 +7,22 @@
 <title>Insert title here</title>
 	        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
         <style>
-        	
+        	*{
+        		box-sizing: border-box;
+        	}
             body{
                 width: 1280px;
-             
+                height:800px;
+             	margin:auto;
                 font-family: 'Noto Sans KR', sans-serif;
-                margin: auto;
+       
+               
             }
         
             header, nav, section, footer{
                 box-sizing: border-box;
                 display: block;
-   /*               border: 1px solid black;  */
+         /*         border: 1px solid black; */
             }
             section{
             	height:300px
@@ -44,13 +48,13 @@
                 height: 20%;
             }
             #headerSec1{
-                width: 60%;
+                width: 70%;
                 height: 100%;
                 float: left;
                 font-size: 12px;
             }
             #headerSec2{
-                width: 25%;
+                width: 15%;
                 height: 100%;
                 float: left;
                 text-align: right;
@@ -59,20 +63,38 @@
             #mainlogo{
                 width: 80%;
                 height: 50%;
-                margin-top: 5px;
-                margin-bottom: 1px;
+                margin:auto;
             }
+      
+         	
             #searchBox{
-                width: 40%;
-              
-                border: 1px solid green;
-                margin-top: 10px;
+                width: 225px;
+              	height:35px;
+                border: 4px solid green;
+            	position: absolute;
+            	left:800px;
+          
             }
             #searchBtn{
-                width: 10%;
-        
-                border: 1px solid green;
+            	display:inline-block;
+                width: 75px;
+        		height:35px;
+                border: 4px solid green;
                 background-color: white;
+           		position: absolute;
+           		left:1020px;
+           		font-size:15px;
+              
+            }
+            .keyword{
+            	position: absolute;
+      			display:inline-block;
+            	top:145px;
+            	left:850px;
+            }
+            .keyword>a{
+            	margin:20px;
+            	font-size: 16px;
             }
             #searchBtn:hover{
                 cursor: pointer;
@@ -117,9 +139,10 @@
             }
             nav>ul>li>a{
                 text-decoration: none;
-                font-size: 13px;
+                font-size: 18px;
                 color: darkgreen;
                 line-height: 60px;
+                font-weight: bolder;
             }
             #listimg{
                 width: 35px;
@@ -141,10 +164,19 @@
         <section id = headerSec1>
             <img src="<%=request.getContextPath()%>/images/logo.png" id= "mainlogo">
             <form id="searchFrm" name="searchFrm" method="GET" action="#">
-                <input type="text" id = "searchBox">
-                <input type="submit" id="searchBtn" value="검색"></input>
+            	<div class="searchWrapper">
+	                <input type="text" id = "searchBox">
+	                <span id="searchBtn">검색</span>
+	                <!-- <input type="submit" id="searchBtn" value="검색"> -->
+            	</div>
+               
             </form>
-            <a href="#">keywd</a>&nbsp;<a href="#">keywd</a>&nbsp;<a href="#">keywd</a>&nbsp;<a href="#">keywd</a>
+        	<p class=keyword>
+	        	<span> <a href="#"> 세탁기 </a> </span>	
+	        	<span> <a href="#"> 선풍기  </a></span>	
+	        	<span> <a href="#"> TV </a></span>	
+	        	<span> <a href="#"> 건조기 </a> </span>
+        	</p>
         </section>
         <section id="headerSec2">
             <p data-notifications="00" class="button" href="#">알림</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
