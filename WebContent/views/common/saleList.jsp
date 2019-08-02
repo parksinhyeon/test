@@ -10,21 +10,6 @@
 	box-sizing: border-box;
 }
 
-.localSel {
-	float: left;
-	width: 150px;
-	height: 40px;
-	text-align: center;
-}
-
-.local {
-	border-top: 1px solid black;
-	border-right: 1px solid black;
-}
-
-.public {
-	border-bottom: 1px solid black;
-}
 
 #wrapper {
 	
@@ -82,13 +67,123 @@ listSale{
 .localSel{
 	cursor:pointer;
 }
+
+
+/* -----------------------지역선택--------------------------- */
+
+     .menubar{
+            border:none;
+            border:0px;
+            margin:0px;
+            padding:0px;
+            font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+            font-size:14px;
+            font-weight:bold;
+            }
+
+            .highList{
+            /* background: rgb(109,109,109); */
+             width:1280px;
+            height:100%;
+            list-style:none;
+            margin-left:139px;
+            padding:0;
+      
+            }
+
+           
+			.localSel{
+				float:left;
+	            padding:0px;
+	            width:150px;
+			}
+            .menubar li a{
+            /* background: rgb(109,109,109); */
+            color:darkgreen;
+            display:block;
+            font-weight:normal;
+            line-height:50px;
+            margin:0px;
+            padding:0px 25px;
+            text-align:center;
+            text-decoration:none;
+            }
+			
+            .menubar li a:hover, .menubar ul li:hover a{
+            /* border: 1px solid darkgreen; */
+            /* color: navy; */
+            text-decoration:none;
+            }
+
+            .localList{
+           
+            background: whitesmoke;
+            display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+            width:700px;
+            opacity: 0.8;
+        
+            position: absolute;
+
+            }
+
+            .menubar li:hover ul{
+            display: inline; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
+            }
+
+            .menubar li li {
+            /* background: rgb(109,109,109); */
+            display: inline;
+            float:none;
+            margin:0px;
+            padding:0px;
+            /* width:200px; */
+
+            }
+
+            .menubar li:hover li a{
+            background:none;
+            }
+
+            .menubar li ul a{
+            display: inline;
+            /* height: 50px; */
+            color: black;
+            font-size:12px;
+            font-style:normal;
+            margin:0px;
+            padding:0px 10px 0px 15px;
+            text-align: center;
+            }
+
+         .menubar li ul li:hover a{
+            /* background: rgb(71,71,71); */
+            border:0px;
+             /* color:navy; */
+            text-decoration:none;
+            }
+
+
 </style>
 </head>
 <body>
-	<div>
-		<div class="localSel local" id="local">지역</div>
-		<div class="localSel public" id="public">전국</div>
-	</div>
+ <div class= menubar>
+        <ul class="highList">
+            <li><a href="#" class="localSel local" id="local">우리동네</a></li>
+            <li><a href="#" class="localSel public" id="public">전국</a>
+                <ul class="localList">
+                    <li><a href="#">서울시</a></li>
+                    <li><a href="#">경기도</a></li>
+                    <li><a href="#">인천광역시</a></li>
+                    <li><a href="#">강원도</a></li>
+                    <li><a href="#">충청도</a></li>
+                    <li><a href="#">전라도</a></li>
+                    <li><a href="#">경상도</a></li>
+                    <li><a href="#">제주도</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
 	<section id="wrapper">
 
 
@@ -176,16 +271,7 @@ listSale{
 	</section>
 	
 	<script>
-		$("#public").click(function(){
-			$(this).css({"border":"1px solid black"});
-			$("#local").css({"border":"0"});
-		});
 		
-			$("#local").click(function(){
-				$(this).css({"border":"1px solid black"});
-				$("#public").css({"border":"0"});
-			});
-	
 	</script>
 </body>
 </html>
