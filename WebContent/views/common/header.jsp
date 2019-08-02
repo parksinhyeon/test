@@ -52,6 +52,7 @@
                 height: 100%;
                 float: left;
                 font-size: 12px;
+
             }
             #headerSec2{
                 width: 15%;
@@ -68,32 +69,37 @@
       
          	
             #searchBox{
-                width: 225px;
+                width: 300px;
               	height:35px;
-                border: 4px solid green;
-            	position: absolute;
-            	left:800px;
+                border: 2px solid green;
+                border-radius:5px;
+                margin-left:0;
+      		
+           		
           
             }
             #searchBtn{
             	display:inline-block;
                 width: 75px;
         		height:35px;
-                border: 4px solid green;
+                border: 2px solid green;
+                border-radius:5px;
                 background-color: white;
-           		position: absolute;
-           		left:1020px;
            		font-size:15px;
+           		line-height: 28.5px;
+           		
               
             }
             .keyword{
-            	position: absolute;
-      			display:inline-block;
+				
+      			
             	top:145px;
             	left:850px;
+            	margin:auto;
             }
-            .keyword>a{
-            	margin:20px;
+            .keyword>span{
+            display:inline-block;
+            	margin:0 5px 0 5px;
             	font-size: 16px;
             }
             #searchBtn:hover{
@@ -135,20 +141,48 @@
                 float: left;
                 list-style: none;
                 width: 20%;
-                line-height: 45px;  
-            }
-            nav>ul>li>a{
-                text-decoration: none;
+                line-height: 65px; 
                 font-size: 18px;
                 color: darkgreen;
                 line-height: 60px;
-                font-weight: bolder;
+                font-weight: bolder; 
+              
+                text-align: center;
+                position: relative;
             }
-            #listimg{
-                width: 35px;
-                height: 35px;
-                margin-top: 5px;
-            }         
+          	nav>ul>li>span{
+          		display: inline-block;
+          		cursor: pointer;
+          	}
+           
+           .categoryImg{
+              position: absolute;
+           		top:14px;
+           		left:55px;
+           	
+           }    
+            
+            /*----------------------------------------------------------------  */
+            
+          
+            }
+
+            .menubar li ul a{
+            display: inline;
+            /* height: 50px; */
+            color: black;
+            font-size:12px;
+            font-style:normal;
+            margin:0px;
+            padding:0px 10px 0px 15px;
+            text-align: center;
+            }
+
+         .menubar li ul li:hover a{
+            /* background: rgb(71,71,71); */
+            border:0px;
+             /* color:navy; */
+            text-decoration:none;
             
         </style>
         
@@ -162,7 +196,7 @@
             <p id="articleP">어디에요</p>
         </article>
         <section id = headerSec1>
-            <img src="<%=request.getContextPath()%>/images/logo.png" id= "mainlogo">
+            <a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo.png" id= "mainlogo"></a>
             <form id="searchFrm" name="searchFrm" method="GET" action="#">
             	<div class="searchWrapper">
 	                <input type="text" id = "searchBox">
@@ -179,18 +213,17 @@
         	</p>
         </section>
         <section id="headerSec2">
-            <p data-notifications="00" class="button" href="#">알림</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a id="logout" href="#">로그아웃</a>
+            <p data-notifications="00" class="button">알림</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a id="logout" href="#">로그인</a>
         </section>
     </header>
     <nav>
         <ul>
-            <li><img src="list.png" id="listimg"></img></li>
-           
-            <li><a href="#">중고거래</a></li>
-            <li><a href="#">커뮤니티</a></li>
-            <li><a href="#">마이페이지</a></li>
-            <li><a href="#">고객센터</a></li>
+            <li><img src="<%=request.getContextPath()%>/images/list.png" class="categoryImg"></img>카테고리</li>
+            <li><span>물건팔기</span></li>
+            <li><span>커뮤니티</span></li>
+            <li><span>마이페이지</span></li>
+            <li><span>고객센터</span></li>
         </ul>
     </nav>
    </section>

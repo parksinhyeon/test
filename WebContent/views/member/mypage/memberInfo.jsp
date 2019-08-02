@@ -21,6 +21,8 @@
 	}
 	.form-input{
 		width:400px;
+		border:1px solid rgba(0,0,0,0.2);
+		border-radius: 5px;
 	}
 	.form-button{
 		width:80px;
@@ -50,7 +52,7 @@
 			<div class="form-group">
 				<label>주소</label><br> <input type=text class="form-input address" readonly>
 				<button class="form-button" type="button">주소 검색</button>
-				<label>상세 주소</label><br> <input type=text  class="form-input addressDetail" readonly>
+				<label>상세 주소</label><br> <input type=text  class="form-input addressDetail">
 					
 			</div>
 			
