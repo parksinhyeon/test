@@ -62,9 +62,9 @@
                 font-size: 12px;
             }
             #mainlogo{
-                width: 80%;
-                height: 50%;
-                margin:auto;
+                width: 300px;
+                height: 30%;
+                margin:20px;
             }
       
          	
@@ -183,7 +183,12 @@
             border:0px;
              /* color:navy; */
             text-decoration:none;
-            
+         }
+         .deallocal{
+         	display:block;
+         	font-size:20px;
+         }
+         
         </style>
         
 
@@ -192,8 +197,12 @@
 	<section>
 	  <header>
         <article>
-            <div id="articleSec"><img src="<%=request.getContextPath()%>/images/local.png" width="50%" height="80%"></img></div>
-            <p id="articleP">어디에요</p>
+            <div id="articleSec">
+            <img src="<%=request.getContextPath()%>/images/local.png" width="50%" height="80%"></img>
+            <span class="deallocal l1">서울특별시</span>
+            <span class="deallocal l2">종로구</span>
+            </div>
+          
         </article>
         <section id = headerSec1>
             <a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo.png" id= "mainlogo"></a>
@@ -210,6 +219,9 @@
 	        	<span> <a href="#"> 선풍기  </a></span>	
 	        	<span> <a href="#"> TV </a></span>	
 	        	<span> <a href="#"> 건조기 </a> </span>
+	        	<span> <a href="#"> 전자레인지 </a> </span>
+	        	<span> <a href="#"> 에어프라이어</a> </span>
+	        	
         	</p>
         </section>
         <section id="headerSec2">
@@ -217,6 +229,7 @@
             <a id="logout" href="#">로그인</a>
         </section>
     </header>
+    <hr>
     <nav>
         <ul>
             <li><img src="<%=request.getContextPath()%>/images/list.png" class="categoryImg"></img>카테고리</li>
@@ -226,6 +239,7 @@
             <li><span>고객센터</span></li>
         </ul>
     </nav>
+    <hr>
    </section>
 	
 </body>
