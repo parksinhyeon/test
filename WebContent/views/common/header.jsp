@@ -154,10 +154,14 @@
             <li><a href="#">중고거래</a></li>
             <li><a href="#">커뮤니티</a></li>
             <li><a href="#">마이페이지</a></li>
-            <li><a href="#">고객센터</a></li>
+            <li><a href="#" onclick="notice_go">고객센터</a></li>
         </ul>
     </nav>
-   
+   <script>
+   	function notice_go(){
+   		location.href="<%=request.getContextPath()%>/ServiceCenter_Go";
+   	}
+   </script>
 	
 </body>
 </html>
