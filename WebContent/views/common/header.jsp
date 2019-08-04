@@ -1,21 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-        <style>
-        	*{
-        		box-sizing: border-box;
-        	}
-            body{
-                width: 1280px;
-                height:800px;
-             	margin:auto;
-                font-family: 'Noto Sans KR', sans-serif;
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="<%=request.getContextPath()%>/style/common/header.css" type="text/css">
        
+
                
             }
         
@@ -192,6 +187,7 @@
         </style>
         
 
+
 </head>
 <body>
 	<section>
@@ -206,7 +202,7 @@
         </article>
         <section id = headerSec1>
             <a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo.png" id= "mainlogo"></a>
-            <form id="searchFrm" name="searchFrm" method="GET" action="#">
+            <form id="searchFrm" name="searchFrm" method="GET">
             	<div class="searchWrapper">
 	                <input type="text" id = "searchBox">
 	                <span id="searchBtn">검색</span>
@@ -229,18 +225,30 @@
             <a id="logout" href="#">로그인</a>
         </section>
     </header>
+
+    <nav class="menu">
+
     <hr>
     <nav>
+
         <ul>
-            <li><img src="<%=request.getContextPath()%>/images/list.png" class="categoryImg"></img>카테고리</li>
-            <li><span>물건팔기</span></li>
-            <li><span>커뮤니티</span></li>
-            <li><span>마이페이지</span></li>
-            <li><span>고객센터</span></li>
+            <li id="category">
+           <%--  <img src="<%=request.getContextPath()%>/images/list.png" class="categoryImg"> --%>
+            카테고리</li>
+            <li id="sale">물건팔기</li>
+            <li id="communtiy">커뮤니티</li>
+            <li id="mypage">마이페이지</li>
+            <li id="customer">고객센터</li>
         </ul>
     </nav>
     <hr>
    </section>
 	
+	
+	<script>
+		<%-- $("#mypage").click(function(){
+			location.href="<%=request.getContextPath()%>/views/mypage/pwdInputForm.jsp";	
+		}); --%>
+	</script>
 </body>
 </html>

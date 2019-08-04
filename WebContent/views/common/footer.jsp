@@ -6,11 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-body{
-height:120px;
-}
 	footer{
-		
+
+		clear:both;
+
 		width:1280px;
 		height:200px;
 		margin-bottom:0;
@@ -18,11 +17,15 @@ height:120px;
 		box-sizing:border-box;
 		
 	}
+
+
 </style>
 </head>
 <body>
-	<div>
-		<footer> 푸터</footer>
-	</div>
+	<footer>
+		<div>
+			 푸터
+		</div>
+	</footer>
 </body>
 </html>

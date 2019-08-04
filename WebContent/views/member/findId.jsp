@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../../../style/member/form.css" type="text/css">
+<link rel="stylesheet" href="../../style/member/form.css" type="text/css">
 <style>
 
 
@@ -13,18 +13,13 @@
 </style>
 </head>
 <body>
-	<%@ include file="../../common/header.jsp"%>
-
-
+	
 	<div id="wrapper" >
 			<form class="join-form" action="#" method="POST">
 				<div class="form-header">
-					<h3>비밀번호 찾기</h3>
+					<h3>아이디 찾기</h3>
 				</div>
 				<!--인증 가능 이메일 입력-->
-				<div class="form-group">
-					<input type="text" class="form-input" placeholder="아이디를 입력하세요">
-				</div>
 				<div class="form-group">
 					<input type="text" class="form-input" placeholder="인증 가능한 이메일을 입력하세요">
 				</div>
@@ -46,13 +41,13 @@
 				<div class="form-group">
 					<button class="form-button" id="cancel" type="reset">취소</button>
 				</div>
-				
+
 			</form>
 
 
 		</div>
 	
-		<%@ include file="../../common/footer.jsp"%>
+	
 	
 </body>
 </html>

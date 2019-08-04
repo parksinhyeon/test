@@ -6,49 +6,57 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-body{
-	width:1280px;
-}
+
+*{box-sizing: border-box;}
+body{width:1280px;}
 aside{
 	float:left;
-	width:200px;
+	width:20%;
 	height:800px;
 	border-right:1px solid lightgrey;
-	margin:auto;
+	margin:0;
 }	
-
 ul{
 	list-style: none;
+	padding:0;
+	margin:0;
+	heigh:50px;
+	font-size:20px;
 }
-.sideList{
-	margin-bottom:20px;
-}
+.sideList{margin-bottom:30px;}
+#myInfo{cursor: pointer;}
 
 </style>
 </head>
 
 <body>
+	
 	<aside>
-		<div id="wrapper">
 		
-			<h2>마이페이지</h2>
+			
 			<ul>
-				
-				<li class="sideList">
-				<div class="ListWrapper">정보 수정</div>
+				<li><h2>마이페이지</h2><li>
+				<li class="sideList" id="myInfo">
+				<div>정보 수정</div>
 				</li>
-				<li class="sideList">
-				<div class="ListWrapper">찜 내역 조회</div>
+				<li class="sideList pick">
+				<div>찜 내역 조회</div>
 				</li>
-				<li class="sideList">
-				<div class="ListWrapper">거래 내역</div>
+				<li class="sideList dealhistoy">
+				<div>거래 내역</div>
 				</li>
-				<li class="sideList">
-				<div class="ListWrapper">내 게시글</div>
+				<li class="sideList myBoard">
+				<div>내가 쓴 게시글</div>
 				</li>
 				
 			</ul>
-		</div>
+		
 	</aside>
+	
+	<script>
+		$("#myInfo").click(function(){
+			location.href="<%=request.getContextPath()%>/views/mypage/pwdInputForm.jsp";
+		});
+	</script>
 </body>
 </html>
