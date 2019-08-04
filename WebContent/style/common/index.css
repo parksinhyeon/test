@@ -11,7 +11,7 @@ body{
 	z-index: 30;
 	position: fixed;
 	left: 0;
-	display:none;
+    display:none;
 	float: left;
 }
 
@@ -28,7 +28,7 @@ body{
 #popup2 {
 	border-radius: 5px;
 	width: 350px;
-	margin: 150px auto;
+	margin: 70px auto;
 	border: 1px solid #ddd;
 	padding: 2rem;
 	background: #ffffff;
@@ -41,25 +41,13 @@ body{
 	animation: animatepop 0.5s;
 }
 
-/* @
-keyframes animatepop {
-	from { 
-	width:1000px;
-	height: 900px;
-}
 
-to {
-	width: 400px;
-	height: 300px;
-}
-
-}
- */
 .form-input {
 	background: #fafafa;
 	border: 1px solid #eeeeee;
 	padding: 12px;
 	width: 100%;
+	border-radius: 5px;
 }
 
 .form-group {
@@ -67,16 +55,16 @@ to {
 }
 
 .form-button {
-	background: #69d2e7;
+	background: darkgreen;
 	border: 1px solid #ddd;
 	color: #ffffff;
 	padding: 10px;
 	width: 100%;
-	text-transform: uppercase;
+	border-radius: 5px;
 }
 
 .form-button:hover {
-	background: #69c8e7;
+	background: green;
 }
 
 .form-header {

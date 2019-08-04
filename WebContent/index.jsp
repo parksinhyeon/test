@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +8,13 @@
 <title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="style/member/index.css" type="text/css">
+<link rel="stylesheet" href="style/common/index.css" type="text/css">
+
+
+
 </head>
 
-<body>
+<body onclick="">
 	<div id="modal" class="animate-pop">
 
 		<div id="popup1">
@@ -87,9 +91,15 @@
 
 		</div>
 	</div>
+
 	<%@ include file="views/common/header.jsp"%>
+
+
 	<%@ include file="views/common/saleList.jsp"%>
+
+
 	<%@ include file="views/common/footer.jsp"%>
+
 </body>
 
 <script>
@@ -158,11 +168,17 @@
 		
 		
 		$("#goFindIdForm").click(function(){
-			location.href="views/member/mypage/findId.jsp";
+			location.href="views/member/findId.jsp";
 		});
 		$("#goFindPwdForm").click(function(){
-			location.href="views/member/mypage/findPwd.jsp";
+			location.href="views/member/findPwd.jsp";
 		});
+		
+		$("body").click(function(){
+	
+			$("#modal").css("display","block");
+		});
+			
 		
 		
 

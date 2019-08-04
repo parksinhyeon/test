@@ -12,7 +12,7 @@
 
 
 #wrapper {
-	
+	border:1px solid;
 	width: 1280px;
 	height: 1280px;
 	align-content: center;
@@ -72,13 +72,13 @@ listSale{
 /* -----------------------지역선택--------------------------- */
 
      .menubar{
-            border:none;
-            border:0px;
+            border:1px solid;
             margin:0px;
             padding:0px;
             font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
             font-size:14px;
-            font-weight:bold;
+            font-weight:bolder;
+            height:50px;
             }
 
             .highList{
@@ -104,7 +104,7 @@ listSale{
             font-weight:normal;
             line-height:50px;
             margin:0px;
-            padding:0px 25px;
+        
             text-align:center;
             text-decoration:none;
             }
@@ -121,7 +121,6 @@ listSale{
             display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
             width:700px;
             opacity: 0.8;
-        
             position: absolute;
 
             }
