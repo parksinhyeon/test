@@ -9,10 +9,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	    <link rel="stylesheet" href="<%=request.getContextPath()%>/style/common/header.css" type="text/css">
-       
-
-    
-        
 
 
 </head>
@@ -53,10 +49,16 @@
         </section>
     </header>
 
+
    
 
-    <hr>
-    <nav  class="menu">
+
+
+
+
+   <hr>
+    <nav class="menu">
+
 
         <ul>
             <li id="category">
