@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 * {
 	box-sizing: border-box;
@@ -17,7 +18,7 @@
 	height: 1280px;
 	align-content: center;
 	clear: both;
-	
+	background-color:
 	margin:0;
 }
 
@@ -46,9 +47,7 @@ ul {
 	
 	padding: 0;
 }
-listSale{
-	margin:0;
-}
+
 .listSale li {
 	float: left;
 	margin: 0;
@@ -158,7 +157,8 @@ listSale{
             border:0px;
              /* color:navy; */
             text-decoration:none;
-            }
+           
+          }
 
 
 </style>
@@ -210,7 +210,11 @@ listSale{
 	</section>
 	
 	<script>
-		
+		$(".listSale>li").mouseenter(function(){
+			$(this).children().css({"text-decoration":"underline","cursor":"pointer"});
+		}).mouseleave(function(){
+			$(this).children().css({"text-decoration":"none","cursor":"none"});
+		});
 	</script>
 </body>
 </html>
