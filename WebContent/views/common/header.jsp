@@ -10,6 +10,7 @@
    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	    <link rel="stylesheet" href="<%=request.getContextPath()%>/style/common/header.css" type="text/css">
 
+
 </head>
 <body>
 	<section>
@@ -48,13 +49,20 @@
         </section>
     </header>
 
+
+   
+
+
+
+
+
    <hr>
     <nav class="menu">
 
+
         <ul>
             <li id="category">
-           <%--  <img src="<%=request.getContextPath()%>/images/list.png" class="categoryImg"> --%>
-            카테고리</li>
+            <div><img src="<%=request.getContextPath()%>/images/list.png" class="categoryImg"></div><div>카테고리</div></li>
             <li id="sale">물건팔기</li>
             <li id="communtiy">커뮤니티</li>
             <li id="mypage">마이페이지</li>

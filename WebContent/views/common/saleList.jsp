@@ -12,7 +12,7 @@
 
 
 #wrapper {
-	border:1px solid;
+
 	width: 1280px;
 	height: 1280px;
 	align-content: center;
@@ -72,7 +72,6 @@ listSale{
 /* -----------------------지역선택--------------------------- */
 
      .menubar{
-            border:1px solid;
             margin:0px;
             padding:0px;
             font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
@@ -187,83 +186,24 @@ listSale{
 
 
 		<div id="listFrame">
+		<%for(int i=0; i<4; i++){ %>
 			<ul class="listSale" id="list1">
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-
+				<%for(int j=0; j<4; j++){%>
+					
+					<li>
+					
+					<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
+						<div class="listFooter">
+							<div>10년된 세탁기<%=j+(4*i)+1 %></div>
+							<div>10000원</div>
+						</div>
+					</li>
+					
+					
+				<%}%>
 			</ul>
-			<ul  class="listSale" id="list2">
+		<%}%>
 			
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-			</ul>
-			<ul  class="listSale" id="list3">
-			
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-			</ul>
-			<ul class="listSale" id="list4">
-			
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-				<li>
-				<div class="imgFrame"><img src="images/river1.png" class="salImg"></div>
-					<div class="listFooter"></div>
-				</li>
-			</ul>
 		</div>
 
 
