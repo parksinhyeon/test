@@ -9,18 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import member.model.service.MemberService;
-
-@WebServlet("/checkEmail.me")
-public class CheckEmailServlet extends HttpServlet {
+@WebServlet("/checkNick.me")
+public class CheckNickServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public CheckEmailServlet() {
+    public CheckNickServlet() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
-		int result = new MemberService().checkInfo(email);
+		response.setCharacterEncoding("UTF-8");
+		String nick = request.getParameter("nick");
+		int result =new MemberService().checkInfo(nick);
 		response.getWriter().print(result);
 	}
 
