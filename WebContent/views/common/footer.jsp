@@ -7,19 +7,25 @@
 <title>Insert title here</title>
 <style>
 	footer{
+
+		clear:both;
+
 		width:1280px;
-		height:120px;
+		height:200px;
 		margin-bottom:0;
 		background:gray;
 		box-sizing:border-box;
 		
-	
 	}
+
+
 </style>
 </head>
 <body>
-	<div>
-		<footer> 푸터</footer>
-	</div>
+	<footer>
+		<div>
+			 푸터
+		</div>
+	</footer>
 </body>
 </html>

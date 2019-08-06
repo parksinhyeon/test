@@ -13,9 +13,11 @@ body{
 
 #wrapper{
 	width:300px;
-	height:1200px;
-	margin:auto;
+/* 	height: 800px;	 */
+	margin:100px auto;
 	box-sizing: border-box;
+
+
 }
 
 .form-input {
@@ -31,7 +33,7 @@ body{
 }
 
 .form-button {
-	background: #69d2e7;
+	background: darkgreen;
 	border: 1px solid #ddd;
 	color: #ffffff;
 	padding: 10px;
@@ -40,7 +42,7 @@ body{
 }
 
 .form-button:hover {
-	background: #69c8e7;
+	background: #green;
 }
 
 .form-header {
