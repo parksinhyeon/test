@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항</title>
+<title>공지사항 게시판</title>
 	<style>
 		#outer{
 			border:1px solid red;
@@ -25,11 +25,6 @@
 			margin-left:auto;
 			margin-right:auto;
 		}
-		/* .searchArea {
-			width:650px;
-			margin-left:auto;
-			margin-right:auto;
-		} */
 		th{
 			border-bottom:2px solid green;
 			height: 30px;
@@ -86,9 +81,7 @@
 				</tr> -->	
 			</table>
 		</div>
-		<br>
-		
-		
+			<br>	<br>
 		<!-- 공지사항 상세페이지 -->
 		<div id="detailArea" align="center">
 			<table align="center" id "InformArea"><!-- 공지사항 테이블 -->
@@ -120,16 +113,47 @@
 		            제3항의 승인을 얻지 못한 때에는 그 처분 또는 명령은 그때부터 효력을 상실한다. 이 경우 그 명령에 의하여 개정 또는 폐지되었던 법률은 그 명령이 승인을 얻지 못한 때부터 당연히 효력을 회복한다.
 	    	</div>
 	    	<br>
-	    	<div id=commentArea align="right">
-	    	<form method="post" action=""><!-- action="" 댓글 경로 -->
-	    		<tr>
-	    			<td><textarea id="comment_text" rows="3" cols="50" maxlength="200" style="overflow:auto; width:680px; height:100px;" title="댓글입력"></textarea></td>
-	    			<td><button type="reset" id="comment_btn_reset">초기화</button></td>
-	    			<td><button type="submit" id="comment_btn">등록</button></td>
-	    		</tr>
-	    	</form>
-	    	</div>
 		</div>
+	<!------- 페이징 바 ------->
+		<!-- 페이징 처리 시작! -->
+	<div class="pagingArea" align="center">
+		<!-- 맨 처음으로(<<) -->
+		<span class="pagingBtn clickBtn" onclick="location.href='<%= request.getContextPath() %>/list.bo?currentPage=1'">&lt;&lt;</span>
+	
+		<!-- 이전 페이지로(<) -->
+			<span class="pagingBtn">&lt;</span>
+			<span class="pagingBtn clickBtn">&lt;</span>
+				<span class="pagingBtn selectBtn"></span>
+				<span class="pagingBtn clickBtn"></span>
+
+		
+		<!-- 다음 페이지로(>) -->
+			<span class="pagingBtn"> &gt; </span>
+
+			<span class="pagingBtn clickBtn">&gt;</span>
+
+		
+		<!-- 맨 끝으로(>>) -->
+		<span class="pagingBtn clickBtn">&gt;&gt;</span>
+	</div>
+	
+	<br><br><br>
+	<div class="searchArea" align="center">
+		<select id="searchCondition" name="searchCondition">
+			<option>-----</option>
+			<option value="category">카테고리</option>
+			<option value="writer">작성자</option>
+			<option value="title">제목</option>
+			<option value="content">내용</option>
+		</select>
+		<input type="search">
+		<button type="submit">검색하기</button>
+		
+		<%-- <!-- 로그인한 유저만 글 쓰기 가능 -->
+		<% if(loginUser != null){ %>
+			<button type="button" onclick="location.href='<%=request.getContextPath()%>/insertForm.bo'">글쓰기</button>
+		<% } %> --%>
+	</div>
 	</div>						
 </body>
 </html>

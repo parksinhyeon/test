@@ -5,17 +5,55 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	
+	nav{
+		border:2px solid red;
+		background-color:blanchedalmond;
+	    color: darkgreen;
+	    width: 1280px;
+        height:200px;
+	    clear: both;
+	    position: relative;
+	}
+	nav>ul>li{
+		border:1px solid red;
+		background-color:aqua;
+        border-radius:40px;
+	    float: right;
+	    list-style: none;
+	    width: 100px;
+	    height: 50px;
+	}
+	nav>ul>li:hover{
+		
+		background-color:yellow;
+        border-radius:40px;
+	    float: right;
+	    list-style: none;
+	    width: 100px;
+	    height: 50px;
+
+	    
+	}
+	nav>ul>li>a{
+	    text-decoration: none;
+	    font-size: 13px;
+	    color: darkgreen;
+	    /* line-height: 60px; */
+	}
+	
+</style>
 </head>
 <body>
 	<header>
     <nav>
-        <ul>
-            <li><img src="list.png" id="listimg"></img></li>
-           
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">문의하기</a></li>
-            <li><a href="#">이용약관</a></li>
-            <li><a href="#" onclick="notice_go">공지사항</a></li>
+        <ul align="center">    
+            <li><a href="#"><h2>공지사항</h2></a></li>
+            <li><a href="#"><h2>이용약관</h2></a></li>
+            <li><a href="#"><h2>문의하기</h2></a></li>
+            <li><a href="#" onclick="notice_go"><h2>FAQ</h2></a></li>
+       
         </ul>
     </nav>
    <script>
