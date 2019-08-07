@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-String certiCode =(String)request.getAttribute("saveCode");
 
-	
+String msg =(String)request.getAttribute("msg");	
 %>
 
 <!DOCTYPE html>
@@ -11,8 +10,8 @@ String certiCode =(String)request.getAttribute("saveCode");
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/member/join.js"></script>
 <link rel="stylesheet" href="style/common/index.css" type="text/css">
 
 
@@ -20,26 +19,35 @@ String certiCode =(String)request.getAttribute("saveCode");
 </head>
 
 <body>
+	<%if(msg!=null) {%>
+	<script>
+		window.alert("<%=msg%>");
+		
+	</script>
+	<%}
+	msg=null;
+	%>
 	<div id="modal" class="animate-pop">
 
 		<div id="popup1">
-			<form class="login-form" action="#" method="POST">
+			<form class="login-form"  action="login.me" method="POST">
 				<div class="form-header">
 					<h3>로그인</h3>
 				</div>
 				<!--Email Input-->
 				<div class="form-group">
-					<input type="text" class="form-input"  placeholder="이메일을 입력해주세요.">
+					<input type="text" class="form-input" id="loginEmail" name="loginEmail" placeholder="이메일을 입력해주세요.">
 				</div>
 				<!--Password Input-->
 				<div class="form-group">
-					<input type="password" class="form-input"
-						placeholder="비밀번호를 입력해주세요.">
+					<input type="password" class="form-input" id="logInPwd" name="loginPwd"  placeholder="비밀번호를 입력해주세요.">
 				</div>
 				<!--Login Button-->
 				<div class="form-group">
-					<button class="form-button" type="submit">로그인</button>
+					<button class="form-button" id="loginBtn" type="submit">로그인</button>
 				</div>
+				
+			</form>
 				<div class="form-footer">
 					아직 회원이 아니세요? <span id="goJoinForm">회원가입하기</span>
 				</div>
@@ -49,12 +57,11 @@ String certiCode =(String)request.getAttribute("saveCode");
 				<div class="form-footer">
 					비밀번호를 잊어버리셨나요? <span id="goFindPwdForm">비밀번호 찾기</span>
 				</div>
-			</form>
 
 
 		</div>
 		<div id="popup2">
-			<form class="join-form" action="#" method="POST">
+			<form class="join-form"  id="joinForm" action="join.me" method="POST">
 				<div class="form-header">
 					<h3>회원가입</h3>
 				</div>
@@ -78,19 +85,19 @@ String certiCode =(String)request.getAttribute("saveCode");
 				
 				<!--비밀번호 입력-->
 				<div class="form-group">
-					<input type="password" class="form-input" name="pwd1" placeholder="비밀번호">
+					<input type="password" class="form-input" id="pwd1" name="pwd1" placeholder="비밀번호">
 				</div>
 				<div class="form-group">
-					<input type="password" class="form-input" name="pwd2" placeholder="비밀번호 확인">
+					<input type="password" class="form-input" id="pwd2" name="pwd2" placeholder="비밀번호 확인">
 				</div>
 				
 				
 				<div class="form-group">
-					<input type="password" class="form-input" name="nickName" placeholder="닉네임">
+					<input type="text" class="form-input" id="nickName" name="nickName" placeholder="닉네임">
 				</div>
 				<!--Login Button-->
 				<div class="form-group">
-					<button class="form-button" type="submit">회원가입</button>
+					<button class="form-button" id="joinBtn">회원가입</button>
 				</div>
 				<div class="form-group">
 					<button class="form-button" id="cancel" type="reset">취소</button>
@@ -112,186 +119,7 @@ String certiCode =(String)request.getAttribute("saveCode");
 
 </body>
 
-<script>
-	$(function() {
-		var code;
-		var emailC=false;
-		var pwd1C =false;
-		var pwd1C =false;
-		
-		
-		
-		/* 회원가입 span 클릭 시 로그인모달 사라지고 회원가입 모달 띄우기  */
-		$("#goJoinForm").click(function() {
-			$("#popup1").css("display", "none");
-			$("#popup2").css("display", "block");
-		});
-		$("#cancel").click(function() {
-			$("#popup1").css("display", "block");
-			$("#popup2").css("display", "none");
-		});
-		
-		
-		
-		/*--------------인증코드 보내기 -----------------------------------  */
-
-		$("#sendCertiNoBtn").click(function() {
-			
-			var min = 2;
-			var sec = 59;
-			
-			$("#checkCertiNoBtn").attr("disabled",false);
-	
-			$("#sendCertiNoBtn").siblings().text("인증번호를 발송하였습니다.").css({
-				"fontSize" : "15px",
-				"color" : "red"
-			});
-			
-			$("#timer").css("display","inline");
-			
-			
-			var secTimer = window.setInterval(function() {
-				if (sec < 0) {
-					sec = 59;
-				}
-				if(sec>=10){
-					$("#sec").text(sec);
-				}else{
-					$("#sec").text("0"+sec);					
-				}
-				sec--;
-			}, 1000);
-
-			setTimeout(function() {
-				$("#min").text(min);
-			}, 1000)
-			setTimeout(function() {
-				$("#min").text(min);
-			}, 1000)
-			var minTimer = window.setInterval(function() {
-				
-				if (min>0) {
-					min--;
-				}
-				$("#min").text(min);
-				
-			}, 60000);
-
-			window.setTimeout(function() {
-				clearInterval(secTimer);
-				clearInterval(minTimer);
-				$("#timer").text("")
-				$("#timer").text("인증 시간이 초과되었습니다.").css({
-					"fontSize" : "15px",
-					"color" : "red"
-				});
-				
-				$("#checkCertiNoBtn").attr("disabled",false);
-				
-				
-			}, 180000)
-			
-			var email=$("#email").val();
-			$.ajax({
-				url:"sendCertiNum.me",
-				data:{email:email},
-				type:"post",
-				success:function(result){
-					code=result;
-				}
-			});
-			
-			
-
-		});
-		
-		
-		
-		
-		
-		$("#checkCertiNoBtn").click(function(){
-			
-		
-		
-			if($("#certiNo").val().trim()==""){
-				$("#timer").next().text("인증번호를 입력해주세요").css("color","red");						
-				setTimeout(function(){
-					$("#timer").next().text("");
-				},2000);
-				
-			}else{
-				if(code!=null){
-					if($("#certiNo").val()==code){
-						$("#timer").next().text("인증 완료").css("color","lightgreen");
-					}else{
-						$("#timer").next().text("인증번호가 틀렸습니다").css("color","red");
-					}
-				}
-			}
-		});
-
-		
-		/*-----------------이메일 중복검사-------------------  */
-		
-		$("#email").on("input",function(){
-			var email=$("#email").val();
-			var regExp =/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
-
-			if($("#email").val().trim()==""){
-				$("#sendCertiNoBtn").attr("disabled","disabled");
-				$("#email").css("border","");
-			}else{
-				if(!regExp.test(email)){
-				$("#email").css("border","3px solid red");
-				$("#sendCertiNoBtn").attr("disabled","disabled");
-				}
-				else{	
-					
-					$.ajax({
-						url:"checkEmail.me",
-						data:{email:email},
-						type:"post",
-						success:function(result){
-							if(result==0){
-							
-								$("#email").css("border","3px solid lightgreen");
-								$("#sendCertiNoBtn").attr("disabled",false);
-								
-							}else{
-								$("#email").css("border","3px solid red");
-								
-								
-							}
-						},
-						error:function(){
-							console.log("에러")
-						}
-							
-					});
-				}
-			}
-		});
-		
-		
 
 
-		$("#goFindIdForm").click(function(){
-			location.href="views/member/findId.jsp";
-		});
-		$("#goFindPwdForm").click(function(){
-			location.href="views/member/findPwd.jsp";
-		});
-		
-		$("body").click(function(){
-	
-			$("#modal").css("display","block");
-		});
-		
-		
-		
-		
-		
 
-	});
-</script>
 </html>
