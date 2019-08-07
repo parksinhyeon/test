@@ -61,5 +61,40 @@ public class MemberDao {
 		}
 		return result;
 	}
+
+	public Member loginMember(Connection conn, String email, String pwd) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String query =prop.getProperty("loginMember");
+		Member member = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, email);
+			pstmt.setString(2, pwd);
+			rset = pstmt.executeQuery();
+			if(rset.next()) {
+				member=new Member(
+							rset.getInt(1),
+							rset.getString(2),
+							rset.getString(3),
+							rset.getString(4),
+							rset.getString(5),
+							rset.getString(6),
+							rset.getString(7).charAt(0),
+							rset.getTimestamp(8),
+							rset.getTimestamp(9),
+							rset.getInt(10),
+							rset.getString(11).charAt(0)
+				);
+			}
+			System.out.println(member);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		return member ;
+	}
 	
 }

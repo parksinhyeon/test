@@ -39,6 +39,8 @@ public class Member {
 		this.pwd = pwd;
 		this.nickName = nickName;
 	}
+	
+	
 	public int getUserNo() {
 		return userNo;
 	}

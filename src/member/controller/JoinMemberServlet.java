@@ -23,7 +23,7 @@ public class JoinMemberServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
-		String pwd = request.getParameter("email");
+		String pwd = request.getParameter("pwd1");
 		String nickName = request.getParameter("nickName");
 		Member member = new Member(email, pwd, nickName);
 		int result = new MemberService().joinMember(member);

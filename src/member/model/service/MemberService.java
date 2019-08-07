@@ -30,4 +30,12 @@ public class MemberService {
 		return result;
 	}
 
+	public Member loginMember(String email, String pwd) {
+		Connection conn = null;
+		MemberDao mDao = new MemberDao();
+		Member member =mDao.loginMember(conn, email, pwd);
+		
+		return member;
+	}
+
 }
