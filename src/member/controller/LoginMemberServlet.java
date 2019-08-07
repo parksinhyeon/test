@@ -2,9 +2,9 @@ package member.controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,32 +28,17 @@ public class LoginMemberServlet extends HttpServlet {
 	
 		Member loginUser = new MemberService().loginMember(email,pwd);
 		
-		if(loginUser.getEmail().equals(email)) {
+		if(loginUser!=null) {
 			
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(1800);
 			session.setAttribute("loginUser", loginUser);
-			
-			
-			String saveId = request.getParameter("saveId");
-			//쿠키 객체 생성
-			Cookie ck = new Cookie("saveId", email);
-			if(saveId != null) {
-			
-				ck.setMaxAge(60 * 60 * 24 * 7); 
-			}else {
-				ck.setMaxAge(0);
-			}
-			
-			//쿠키가 사용될 수 있는 유효 디렉토리 설정
-			ck.setPath("/"); //root 해당 도메인 전역 사용가능
-			
-			//response객체에 쿠키에 담아서 브라우저 전송 -> 이후부터 브라우저가 쿠키 관리
-			response.addCookie(ck);
-					
+			session.setAttribute("msg","로그인 되었습니다.");
 			response.sendRedirect(request.getContextPath());
 		}else {
-
+			request.setAttribute("errorMsg","로그인 정보가 틀렸습니다.");
+			RequestDispatcher view = request.getRequestDispatcher("views/common/errorPage.jsp");
+			view.forward(request, response);
 		}
 	}
 
