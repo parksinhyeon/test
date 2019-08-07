@@ -168,9 +168,18 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="member.model.vo.Member"%>
+<%
 
+String msg =(String)request.getAttribute("msg");	
+Member loginUser = (Member)request.getAttribute("loginUser");
+
+%>
 <!DOCTYPE html>
 <html>
+
+
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -181,6 +190,14 @@
 
 </head>
 <body>
+	<script>
+		var msg = "<%=loginUser.getEmail()%>";
+		
+		if(msg != "null"){
+				alert(msg);
+			}
+	</script>
+
 	<section>
 	  <header>
         <article>
@@ -213,7 +230,11 @@
         </section>
         <section id="headerSec2">
             <p data-notifications="00" class="button">알림</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a id="logout" href="#">로그인</a>
+        
+            <a id="login" href="#">로그인</a>
+      
+    
+       
         </section>
     </header>
 

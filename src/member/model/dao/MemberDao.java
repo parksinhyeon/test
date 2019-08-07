@@ -87,7 +87,7 @@ public class MemberDao {
 							rset.getString(11).charAt(0)
 				);
 			}
-			System.out.println(member);
+	
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
