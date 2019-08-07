@@ -31,7 +31,7 @@ public class MemberService {
 	}
 
 	public Member loginMember(String email, String pwd) {
-		Connection conn = null;
+		Connection conn = getConnection();
 		MemberDao mDao = new MemberDao();
 		Member member =mDao.loginMember(conn, email, pwd);
 		

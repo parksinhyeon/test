@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
 
-String msg =(String)request.getAttribute("msg");	
-%>
+
 
 <!DOCTYPE html>
 <html>
@@ -19,18 +17,13 @@ String msg =(String)request.getAttribute("msg");
 </head>
 
 <body>
-	<%if(msg!=null) {%>
-	<script>
-		window.alert("<%=msg%>");
-		
-	</script>
-	<%}
-	msg=null;
-	%>
+
+
+
 	<div id="modal" class="animate-pop">
 
 		<div id="popup1">
-			<form class="login-form"  action="login.me" method="POST">
+			<form class="login-form"  action="<%=request.getContextPath()%>/login.me" method="POST">
 				<div class="form-header">
 					<h3>로그인</h3>
 				</div>
