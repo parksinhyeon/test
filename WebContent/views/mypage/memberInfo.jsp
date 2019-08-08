@@ -12,20 +12,27 @@ body {
 	width: 1280px;
 	margin: 0 auto;
 }
+.wrapper{
+	float:left;
+	width:80%;
+	height:800px;
+}
 .form-wrapper {
 	
-	width: 70%;
-	margin:auto;
+	width: 50%;
+	margin:20px auto;
 }
+
 .form-input {
 	width: 400px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 5px;
 }
-.form-button {width: 80px;}
+.form-button {width: 90px; border-radius: 5px; box-shadow: 10px; font-size:14px;}
 .address {width: 400px;}
-
-
+#goUpdateBtn,#goUpdatePwdFormBtn,#cancel{
+	width:30%;
+}
 
 
 </style>
@@ -37,14 +44,14 @@ body {
 	<section class="wrapper">
 		<div class="form-wrapper">
 			<h2 id="title">정보 수정</h2>
-			<form>
+			<form id="updateForm">
 				<div class="form-group">
 					<label>이메일</label><br> <input type=text
-						class="form-input email" readonly>
+						class="form-input email" readonly value="<%=loginUser.getEmail()%>">
 				</div>
 				<div class="form-group">
-					<label>이름</label><br> <input type=text class="form-input name"
-						readonly>
+					<label>닉네임</label><br> <input type=text class="form-input name"
+						readonly value="<%=loginUser.getNickName()%>">
 				</div>
 				<div class="form-group">
 					<label>주소</label><br> <input type=text
@@ -54,9 +61,15 @@ body {
 						class="form-input addressDetail">
 
 				</div>
-
-				<div class="form-group"></div>
-				<div class="form-group"></div>
+				<div class="form-group">
+					<label>메신저 아이디</label><br> <input type=text class="form-input messengerId">
+				</div>
+				<div class="form-group">
+					<button class="form-button" id="goUpdateBtn">수정 완료</button>
+					<button class="form-button" id="cancel" >취소</button>
+					<button class="form-button" id="goUpdatePwdFormBtn">비밀번호 변경</button>
+				</div>
+				
 			</form>
 		</div>
 	</section>

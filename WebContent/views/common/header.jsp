@@ -171,8 +171,8 @@
 <%@page import="member.model.vo.Member"%>
 <%
 
-String msg =(String)request.getAttribute("msg");	
-Member loginUser = (Member)request.getAttribute("loginUser");
+String msg =(String)session.getAttribute("msg");	
+Member loginUser = (Member)session.getAttribute("loginUser");
 
 %>
 <!DOCTYPE html>
@@ -190,14 +190,16 @@ Member loginUser = (Member)request.getAttribute("loginUser");
 
 </head>
 <body>
+	
+	<%if(msg!=null){ %>
 	<script>
-		var msg = "<%=loginUser.getEmail()%>";
-		
-		if(msg != "null"){
-				alert(msg);
-			}
+		alert("<%=msg%>");
 	</script>
-
+	<%
+	session.removeAttribute("msg");
+	}
+	
+	%>
 	<section>
 	  <header>
         <article>
@@ -229,12 +231,17 @@ Member loginUser = (Member)request.getAttribute("loginUser");
         	</p>
         </section>
         <section id="headerSec2">
-            <p data-notifications="00" class="button">알림</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        
-            <a id="login" href="#">로그인</a>
-      
-    
-       
+        	
+        		
+	            <span data-notifications="00" id="messege">쪽지</span>
+	            <span data-notifications="00" id="notice">알림</span>
+	            
+	        	<% if(loginUser!=null){%>
+	            <span id="logout" id="logout">로그아웃</span>
+	      		<%}else{ %>
+	    		  <span id="login" id="login">로그인</span>
+	       		<%} %> 
+        	
         </section>
     </header>
 
@@ -263,9 +270,9 @@ Member loginUser = (Member)request.getAttribute("loginUser");
 	
 	
 	<script>
-		<%-- $("#mypage").click(function(){
+		$("#mypage").click(function(){
 			location.href="<%=request.getContextPath()%>/views/mypage/pwdInputForm.jsp";	
-		}); --%>
+		});
 	</script>
 </body>
 

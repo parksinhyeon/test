@@ -9,7 +9,7 @@
 
 section{
 	width:1280px;
-	height:800px;
+	height:500px;
 	border:1px;
 }
 .form-input {
@@ -29,7 +29,7 @@ section{
 .formWrapper {
 	width: 80%;
 	float: left;
-	border:1px solid;
+	
 }
 
 span{
@@ -37,10 +37,12 @@ span{
 }
 .formWrapper div:first-child{
 	width: 350px;
-	margin:150px auto;
+	margin:100px auto;
 	
 
 }
+
+
 </style>
 </head>
 <body>
@@ -49,9 +51,10 @@ span{
 	
 	<section>
 		<%@ include file="../common/myPageSide.jsp"%>
+		<p>&nbsp;&nbsp;&nbsp;<span>마이페이지</span><span>&nbsp; > &nbsp;</span><span>정보수정</span><p>
 		<div class="formWrapper">
 	
-			<form>
+			<form method="post" action="memberInfo.jsp" id="pwdCheckForm">
 	
 				
 			
@@ -59,8 +62,9 @@ span{
 				
 					<div class="form-group">
 						<label>정보수정을 위해 비밀번호를 입력해주세요</label><br>
-						<input type=text class="form-input pwd">
-						<button class="form-button" type="button">확인</button>
+						<input type="hidden" name="email" value="<%=loginUser.getEmail()%>">
+						<input type="password" name="pwd" class="form-input pwd">
+						<button class="form-button">확인</button>
 					</div>
 	
 					<div class="form-group"></div>
@@ -73,5 +77,12 @@ span{
 	</section>
 
 	<%@ include file="../common/footer.jsp"%>
+	
+	
+	<script>
+		
+	</script>
+	
+	
 </body>
 </html>

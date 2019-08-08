@@ -17,9 +17,8 @@
 </head>
 
 <body>
-
-
-
+	
+	<% if(((Member)session.getAttribute("loginUser"))==null){%>
 	<div id="modal" class="animate-pop">
 
 		<div id="popup1">
@@ -101,10 +100,11 @@
 
 		</div>
 	</div>
+	<%} %>
+	
 
 	<%@ include file="views/common/header.jsp"%>
-
-
+	
 	<%@ include file="views/common/saleList.jsp"%>
 
 

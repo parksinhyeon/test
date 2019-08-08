@@ -14,7 +14,7 @@
             header, nav, section, footer{
                 box-sizing: border-box;
                 display: block;
-         /*      border: 1px solid black; */
+            /*  border: 1px solid black;  */
             }
             section{
             	height:300px
@@ -98,14 +98,13 @@
                 cursor: pointer;
                 background-color: yellowgreen;
             }
-            #headerSec1 a{
-                font-size: 12px;
+            #headerSec2 span{
+            	margin-right: 27px;
+            	font-size:14px;
             }
-            #headerSec2 p{
-                display: inline;
-                position: relative;
-                color: darkgreen;
-            }
+           
+        
+           
             [data-notifications]:after {
                 content: attr(data-notifications);
                 position: absolute;
@@ -115,11 +114,8 @@
                 padding: 0.15em;
                 color: #f2f2f2;
                 top: -1.5px;
-            }
-            #logout{
-                text-decoration: none;
-                color: darkgreen;
-            }
+            } 
+            
             .menu{
                 color: darkgreen;
                 font-family: 'Noto Sans KR', sans-serif;
@@ -164,10 +160,7 @@
 		    top:0;
 	
           	}
-            hr{
-            	margin:15px;
-            	border-color:darkgreen;
-            }
+       
             .categoryImg{
             	height: 100%;
             }

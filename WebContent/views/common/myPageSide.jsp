@@ -18,13 +18,25 @@ aside{
 }	
 ul{
 	list-style: none;
-	padding:0;
 	margin:0;
 	heigh:50px;
 	font-size:20px;
 }
-.sideList{margin-bottom:30px;}
+.titleMypage{
+	border:1px solid;
+	margin-top:0;
+	color:white;
+	background: green;
+	padding:20px;
+}
+.sideList{margin-bottom:30px; padding:5px; color:rgba(0,0,0,0.8)}
 #myInfo{cursor: pointer;}
+
+
+#updateInfo{
+	font-weight: bolder;
+	color:black;
+}
 
 </style>
 </head>
@@ -35,9 +47,9 @@ ul{
 		
 			
 			<ul>
-				<li><h2>마이페이지</h2><li>
+				<li><h2 class="titleMypage">마이페이지</h2><li>
 				<li class="sideList" id="myInfo">
-				<div>정보 수정</div>
+				<div id="updateInfo">정보 수정</div>
 				</li>
 				<li class="sideList pick">
 				<div>찜 내역 조회</div>
