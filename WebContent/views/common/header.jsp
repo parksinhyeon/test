@@ -171,9 +171,10 @@
 <%@page import="member.model.vo.Member"%>
 <%
 
-String msg =(String)session.getAttribute("msg");	
+String loginMsg =(String)request.getAttribute("msg");
+String joinMsg =(String)session.getAttribute("msg");
 Member loginUser = (Member)session.getAttribute("loginUser");
-
+String encPwd =(String)request.getAttribute("encPwd"); 
 %>
 <!DOCTYPE html>
 <html>
@@ -191,25 +192,63 @@ Member loginUser = (Member)session.getAttribute("loginUser");
 </head>
 <body>
 	
-	<%if(msg!=null){ %>
+	
+	<%if(loginMsg!=null){ %>
 	<script>
-		alert("<%=msg%>");
+		alert("<%=loginMsg%>");
 	</script>
 	<%
 	session.removeAttribute("msg");
 	}
-	
 	%>
+	
+	<%if(joinMsg!=null){ %>
+	<script>
+		alert("<%=joinMsg%>");
+	</script>
+	<%
+		joinMsg=null;
+	}
+	%>
+	
+	
+	<%if(encPwd!=null){ 
+		if(encPwd.equals(loginUser.getPwd())){%>
+		<script> 
+			location.href="<%=request.getContextPath()%>/views/mypage/memberInfo.jsp";
+		</script>
+		<%}else{ %>
+		
+		<script>
+			alert("비밀번호가 틀렸습니다.");
+			location.href="<%=request.getContextPath()%>/views/mypage/pwdInputForm.jsp";
+		</script>
+		
+	<%}
+		encPwd=null;
+		}%>
+	
+	
 	<section>
 	  <header>
         <article>
             <div id="articleSec">
+            <%if(loginUser!=null){ %>
             <img src="<%=request.getContextPath()%>/images/local.png" width="50%" height="80%"></img>
-            <span class="deallocal l1">서울특별시</span>
-            <span class="deallocal l2">종로구</span>
+	             <%if(loginUser.getAddress()!=null){ %>
+	            <div>
+	            <span class="deallocal l1">서울특별시</span>
+	            <span class="deallocal l2">종로구</span>
+	            </div>
+	            <%}else{%>
+	            <div>주소를 등록해주세요</div>
+	            <%}%>
+            <%}%>
             </div>
           
         </article>
+        
+        
         <section id = headerSec1>
             <a href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/logo.png" id= "mainlogo"></a>
             <form id="searchFrm" name="searchFrm" method="GET">
@@ -230,6 +269,8 @@ Member loginUser = (Member)session.getAttribute("loginUser");
 	        	
         	</p>
         </section>
+        
+        
         <section id="headerSec2">
         	
         		

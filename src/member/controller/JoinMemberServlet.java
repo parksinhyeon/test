@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import member.model.service.MemberService;
 import member.model.vo.Member;
 
-@WebServlet("/join.me")
+@WebServlet(urlPatterns = "/join.me", name="JoinMemberServlet") 
 public class JoinMemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public JoinMemberServlet() {

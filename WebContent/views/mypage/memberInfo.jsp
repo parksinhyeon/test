@@ -3,10 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" charset="UTF-8">
+
+
+
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../style/member/form.css"
 	type="text/css">
+	
 <style>
 body {
 	width: 1280px;
@@ -54,11 +58,14 @@ body {
 						readonly value="<%=loginUser.getNickName()%>">
 				</div>
 				<div class="form-group">
-					<label>주소</label><br> <input type=text
-						class="form-input address" readonly>
-					<button class="form-button" type="button">주소 검색</button>
-					<br> <label>상세 주소</label><br> <input type=text
-						class="form-input addressDetail">
+					<label>주소</label><br> 
+					<%if(loginUser.getAddress()!=null){ %>
+					<input type=text class="form-input address" id="roadAddr"  value="<%=loginUser.getAddress()%>">
+					<%}else{%>
+					<input type=text class="form-input address" id="roadAddr"  placeholder="주소를 등록해주세요">
+					<%} %>
+					<button class="form-button" type="button" onclick="goPopup()" >주소 검색</button>
+					<br> <label>상세 주소</label><br> <input type=text class="form-input addressDetail" id="addrDetail">
 
 				</div>
 				<div class="form-group">
@@ -75,5 +82,25 @@ body {
 	</section>
 
 	<%@ include file="../common/footer.jsp"%>
+	
+	
+	<script>
+	function goPopup(){
+		
+	    var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+		
+	}
+	
+	function jusoCallBack(roadAddr,addrDetail){
+		//document.form.roadAddr.value = roadAddrPart1;
+		roadAddr = encodeURIComponent(roadAddr);
+		
+		$("#roadAddr").val( escape(roadAddr));
+		console.log(roadAddr);
+		//document.form.addrDetail.value = addrDetail;
+		$("#addrDetail").val(addrDetail);
+
+	}
+	</script>
 </body>
 </html>
