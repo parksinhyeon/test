@@ -176,7 +176,7 @@ table {
                     <tr>
                         <td class="title">거래위치</td>
                         <td>
-                        <input type="text" id="address" value="" size="70"><input type="button" value="위치검색" onclick="addressChk()">                  
+                        <input type="text" id="dealLocal" value="" size="70"><input type="button" value="위치검색" onclick="goPopup()" > <!--  -->         
                            <div id = map style ="width:400px; height:250px;"></div>
                         </td>
                     </tr>
@@ -197,33 +197,36 @@ table {
 </div>
 <%@ include file="../../views/common/footer.jsp"%>
 <script>
-var address      = document.getElementById("address");
+var address=document.getElementById("dealLocal");
 var mapContainer = document.getElementById("map");
 var coordXY   = document.getElementById("coordXY");
 var mapOption;
 var map;
-var x,y          = "";
+var x,y  = "";
 
 if (address.value=="") {
 
  mapOption = {
   center: new kakao.maps.LatLng(37.568168, 126.983014), // 임의의 지도 중심좌표 , 제주도 다음본사로 잡아봤다.
-        level: 4// 지도의 확대 레벨
+  level: 4// 지도의 확대 레벨
 
  };
 }
 
 // 지도 생성
+
+
 map = new kakao.maps.Map(mapContainer, mapOption);
 
-
-function addressChk() {
- var gap = address.value; // 주소검색어
+function addressChk(local,detail) {
+map = new kakao.maps.Map(mapContainer, mapOption);
+ var gap = local; // 주소검색어
  if (gap=="") {
   alert("주소 검색어를 입력해 주십시오.");
   address.focus();
   return;
  }
+ 
  
  // 주소-좌표 변환 객체를 생성
  var geocoder = new kakao.maps.services.Geocoder();
@@ -234,12 +237,13 @@ function addressChk() {
   // 정상적으로 검색이 완료됐으면,
   if (status == kakao.maps.services.Status.OK) {
    
-   var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+	var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
    y = result[0].x;
    x = result[0].y;
 
-   // 결과값으로 받은 위치를 마커로 표시합니다.
+   // 결과값으로 받은 위치를 마커로 표시
+   
    var marker = new kakao.maps.Marker({
     map: map,
     position: coords
@@ -247,11 +251,13 @@ function addressChk() {
 
 
    // 인포윈도우로 장소에 대한 설명표시
-   var infowindow = new kakao.maps.InfoWindow({
-    content: '<div style="width:150px;text-align:center;padding:5px 0;">위치</div>'
-   });
-
-   infowindow.open(map,marker);
+   if(detail!=""){
+	    var infowindow = new kakao.maps.InfoWindow({
+	    content: '<div style="width:150px;text-align:center;padding:5px 0;">'+detail+'</div>'
+	   });
+	
+	   infowindow.open(map,marker); 
+   }
    
    // 지도 중심을 이동
    map.setCenter(coords);

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-*{
+			*{
         		box-sizing: border-box;
         	}
             body{
@@ -113,6 +113,8 @@
                 padding: 0.15em;
                 color: #f2f2f2;
                 top: -1.5px;
+              
+                
             } 
             
             .menu{
