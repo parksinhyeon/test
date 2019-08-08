@@ -1,5 +1,8 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +10,10 @@
 <meta http-equiv="Content-Type" charset="UTF-8">
 <title>Insert title here</title>
 <% 
-	
+	request.setCharacterEncoding("UTF-8");
 	String inputYn = request.getParameter("inputYn"); 
 	String roadFullAddr = request.getParameter("roadFullAddr"); 
-	String roadAddrPart1 = request.getParameter("roadAddrPart1"); 
+	String roadAddrPart1 =(String)request.getParameter("roadAddrPart1");
 	String roadAddrPart2 = request.getParameter("roadAddrPart2"); 
 	String engAddr = request.getParameter("engAddr"); 
 	String jibunAddr = request.getParameter("jibunAddr"); 
@@ -45,21 +48,7 @@ function init(){
 	var resultType = "4";
 	var inputYn= "<%=inputYn%>";
 	
-	
-<%-- 	var addr ="<%=roadAddrPart1%>";
-	var addrDetail ="<%=addrDetail%>";
-	$.ajax({
-		url:"encoding.juso",
-		data:{addr:addr,addrDetail:addrDetail},
-		type:"post",
-		dataType:"json",
-		success:function(result){	
-			addr = result.addr;
-			addrDetail=result.addrDetail;
-	
-		}
-	});  --%>
-	
+
 	if(inputYn != "Y"){
 		document.form.confmKey.value = confmKey;
 		document.form.returnUrl.value = url;
@@ -71,8 +60,6 @@ function init(){
 			
 		});
 	}else{
-		
-		 
 		opener.jusoCallBack("<%=roadAddrPart1%>","<%=addrDetail%>");
 		window.close();
 	}

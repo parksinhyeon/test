@@ -3,14 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <meta http-equiv="Content-Type" charset="UTF-8">
-
-
-
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../style/member/form.css"
 	type="text/css">
-	
+<%-- <script type="text/javascript" src="<%=request.getContextPath()%>/js/iconv.js"></script> --%>	
 <style>
 body {
 	width: 1280px;
@@ -40,6 +39,7 @@ body {
 
 
 </style>
+
 </head>
 <body>
 	<%@ include file="../common/header.jsp"%>
@@ -90,14 +90,19 @@ body {
 	    var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
 		
 	}
-	
+	function eucKrToUtf8(str) {
+	    var iconv = new Iconv('euc-kr', 'utf-8');
+	    var buf = new Buffer(str, 'binary');
+	    return iconv.convert(buf).toString();
+	}
 	function jusoCallBack(roadAddr,addrDetail){
-		//document.form.roadAddr.value = roadAddrPart1;
-		roadAddr = encodeURIComponent(roadAddr);
 		
-		$("#roadAddr").val( escape(roadAddr));
-		console.log(roadAddr);
-		//document.form.addrDetail.value = addrDetail;
+		
+		//roadAddr = encodeURIComponent(roadAddr);
+		<%-- var str = <% URLEncoder.encode(%>roadAddr<%,"UTF-8")%>; --%>
+
+
+		$("#roadAddr").val(roadAddr);
 		$("#addrDetail").val(addrDetail);
 
 	}
