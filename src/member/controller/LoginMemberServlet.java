@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import member.model.service.MemberService;
 import member.model.vo.Member;
 
-@WebServlet("/login.me")
+@WebServlet(urlPatterns = "/login.me",name = "LoginMemberServlet")
 public class LoginMemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -25,7 +25,7 @@ public class LoginMemberServlet extends HttpServlet {
 	
 		String email = request.getParameter("loginEmail");
 		String pwd = request.getParameter("loginPwd");
-	
+
 		Member loginUser = new MemberService().loginMember(email,pwd);
 		
 		if(loginUser!=null) {
@@ -33,7 +33,7 @@ public class LoginMemberServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(1800);
 			session.setAttribute("loginUser", loginUser);
-			session.setAttribute("msg","로그인 되었습니다.");
+			request.setAttribute("msg","로그인 되었습니다.");
 			response.sendRedirect(request.getContextPath());
 		}else {
 			request.setAttribute("errorMsg","로그인 정보가 틀렸습니다.");

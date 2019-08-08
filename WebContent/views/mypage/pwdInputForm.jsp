@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +47,12 @@ span{
 </style>
 </head>
 <body>
+
+	
+
 	<%@ include file="../common/header.jsp"%>
+	
+	
 	
 	
 	<section>
@@ -54,16 +60,12 @@ span{
 		<p>&nbsp;&nbsp;&nbsp;<span>마이페이지</span><span>&nbsp; > &nbsp;</span><span>정보수정</span><p>
 		<div class="formWrapper">
 	
-			<form method="post" action="memberInfo.jsp" id="pwdCheckForm">
-	
-				
-			
+			<form method="post" action="<%=request.getContextPath()%>/encryptPwd.me" id="pwdCheckForm">
 				<div >
 				
 					<div class="form-group">
 						<label>정보수정을 위해 비밀번호를 입력해주세요</label><br>
-						<input type="hidden" name="email" value="<%=loginUser.getEmail()%>">
-						<input type="password" name="pwd" class="form-input pwd">
+						<input type="password" name="checkPwd" class="form-input pwd">
 						<button class="form-button">확인</button>
 					</div>
 	
@@ -78,10 +80,7 @@ span{
 
 	<%@ include file="../common/footer.jsp"%>
 	
-	
-	<script>
-		
-	</script>
+
 	
 	
 </body>
