@@ -56,6 +56,10 @@ public class SendCertiNumServlet extends HttpServlet {
 			InternetAddress to = new InternetAddress(userEmail);
 			msg.setRecipient(Message.RecipientType.TO, to);
 			msg.setSubject("인증코드 입니다.", "UTF-8");
+			
+			
+			
+			
 			String num = new RandomNum().getKey(6,true);
 			
 	

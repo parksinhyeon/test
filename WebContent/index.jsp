@@ -10,9 +10,109 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/member/join.js"></script>
-<link rel="stylesheet" href="style/common/index.css" type="text/css">
+<!-- <link rel="stylesheet" href="style/common/index.css" type="text/css"> -->
+
+<style>
+	
+body{
+	height:800px;
+	
+}
+
+#modal {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 30;
+	position: fixed;
+	left: 0;
+    display:none;
+	float: left;
+}
+
+#popup1 {
+	border-radius: 5px;
+	width: 350px;
+	margin: 150px auto;
+	border: 1px solid #ddd;
+	padding: 2rem;
+	background: #ffffff;
+	border: 1px solid #014F01;
+}
+
+#popup2 {
+	border-radius: 5px;
+	width: 350px;
+	margin: 70px auto;
+	border: 1px solid #ddd;
+	padding: 2rem;
+	background: #ffffff;
+	border: 1px solid #014F01;
+	display: none;
+}
+
+.animate-pop {
+	margin: auto;
+	animation: animatepop 0.5s;
+}
 
 
+.form-input {
+	background: #fafafa;
+	border: 1px solid #eeeeee;
+	padding: 12px;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+.form-button {
+	background: darkgreen;
+	border: 1px solid #ddd;
+	color: #ffffff;
+	padding: 10px;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.form-button:hover {
+	background: green;
+}
+
+.form-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.form-footer {
+	text-align: left;
+	color: #00007D;
+}
+
+.form-footer span {
+	float: right;
+	color: red;
+	cursor: pointer;
+}
+
+input::placeholder {
+	color: navy;
+}
+#timer{
+	display:none;
+}
+
+
+
+
+  
+          
+	
+
+</style>
 
 </head>
 

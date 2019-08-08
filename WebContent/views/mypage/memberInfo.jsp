@@ -48,7 +48,7 @@ body {
 	<section class="wrapper">
 		<div class="form-wrapper">
 			<h2 id="title">정보 수정</h2>
-			<form id="updateForm">
+			<form id="updateForm" method="post" action="<%=request.getContextPath()%>/update.me">
 				<div class="form-group">
 					<label>이메일</label><br> <input type=text
 						class="form-input email" readonly value="<%=loginUser.getEmail()%>">
@@ -60,17 +60,18 @@ body {
 				<div class="form-group">
 					<label>주소</label><br> 
 					<%if(loginUser.getAddress()!=null){ %>
-					<input type=text class="form-input address" id="roadAddr"  value="<%=loginUser.getAddress()%>">
+					<input type=text class="form-input address" id="addr"  value="<%=loginUser.getAddress()%>">
 					<%}else{%>
-					<input type=text class="form-input address" id="roadAddr"  placeholder="주소를 등록해주세요">
+					<input type=text class="form-input address" id="addr"  placeholder="주소를 등록해주세요">
 					<%} %>
 					<button class="form-button" type="button" onclick="goPopup()" >주소 검색</button>
 					<br> <label>상세 주소</label><br> <input type=text class="form-input addressDetail" id="addrDetail">
 
 				</div>
 				<div class="form-group">
-					<label>메신저 아이디</label><br> <input type=text class="form-input messengerId">
+					<label>메신저 아이디</label><br> <input type=text id="snsId" value="<%=loginUser.getSnsId()%>" class="form-input messengerId">
 				</div>
+				<input type="hidden" name="uno" value="<%=loginUser.getUserNo()%>">
 				<div class="form-group">
 					<button class="form-button" id="goUpdateBtn">수정 완료</button>
 					<button class="form-button" id="cancel" >취소</button>
@@ -80,21 +81,10 @@ body {
 			</form>
 		</div>
 	</section>
-
+	
 	<%@ include file="../common/footer.jsp"%>
 	
 	
-	<script>
-	function goPopup(){
-		
-	    var pop = window.open("jusoPopup.jsp","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-		
-	}
-
-	function jusoCallBack(roadAddr,addrDetail){
-		$("#roadAddr").val(roadAddr);
-		$("#addrDetail").val(addrDetail);
-	}
-	</script>
+	
 </body>
 </html>

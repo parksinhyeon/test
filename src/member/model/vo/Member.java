@@ -39,8 +39,14 @@ public class Member {
 		this.pwd = pwd;
 		this.nickName = nickName;
 	}
-	
-	
+		
+
+	public Member(int userNo, String address, String snsId) {
+		super();
+		this.userNo = userNo;
+		this.address = address;
+		this.snsId = snsId;
+	}
 	public int getUserNo() {
 		return userNo;
 	}
