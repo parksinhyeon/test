@@ -305,7 +305,7 @@ String encPwd =(String)request.getAttribute("encPwd");
             <li id="category">
             <div><img src="<%=request.getContextPath()%>/images/list.png" class="categoryImg"></div><div>카테고리</div></li>
             <li id="sale">물건팔기</li>
-            <li id="communtiy">커뮤니티</li>
+            <li id="communtiy" onclick="goFboard();">커뮤니티</li>
             <li id="mypage">마이페이지</li>
             <li id="customer">고객센터</li>
         </ul>
@@ -315,6 +315,14 @@ String encPwd =(String)request.getAttribute("encPwd");
 	
 	
 	<script>
+		/* 자유게시판 이동  */
+			function goFBoard(){
+			location.href = "<%=request.getContextPath()%>/list.Fbo";
+		}
+	
+
+	
+	
 		
 		<%if(loginUser==null){%>
 			
